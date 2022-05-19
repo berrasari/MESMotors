@@ -1,4 +1,4 @@
 public class Node {
-    Car data;
+    Object data;
     public Node next;
 }
