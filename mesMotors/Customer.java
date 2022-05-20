@@ -11,7 +11,6 @@ public class Customer {
     }
     @Override
 public String toString() {
-    // TODO Auto-generated method stub
     return  " // Name: "+ getName()  ;
 }
 }

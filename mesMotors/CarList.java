@@ -1,6 +1,5 @@
 package mesMotors;
 
-import javafx.scene.paint.Stop;
 
 public class CarList {
     Node head = null;

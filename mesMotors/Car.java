@@ -23,7 +23,6 @@ public Car( String brandName, String model, String color, int year, int km, int 
 }
 @Override
 public String toString() {
-    // TODO Auto-generated method stub
     return  "// Id:"+ String.format("%" + 5 + "s", myId) +" // Brand:"+ String.format("%" + 11 + "s", brandName) +" // Model: "+  String.format("%" + 10 + "s", model) +"   // Color: "+  String.format("%" + 7 + "s", color) +"   // Year: "+  String.format("%" + 5 + "s", year) +"   // Km:"+  String.format("%" + 10 + "s", km) +"   // Price:"+  String.format("%" + 10 + "s", price)+" TL ";
 }
 
