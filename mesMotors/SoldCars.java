@@ -1,8 +1,12 @@
 package mesMotors;
+/**
+ * SoldCars sinifi stack yapisiyla dizayn edilmistir.
+ * Satilan arabalar  stack yapisinda tutulur.
+*/
 public class SoldCars {
     Node head=null;
         
-        public void push( Object data){
+        public void push( Car data){
             Node node=new Node();
             node.data=data;
             Node temp=head;
@@ -15,9 +19,9 @@ public class SoldCars {
  
         void isEmpty(){
             if(head==null){
-                System.out.println("stack yap�s� bo�tur.");
+                System.out.println("Stack yapisi bostur.");
             }else{
-                System.out.println("stack var.");
+                System.out.println("Stack yapisinda eleman var.");
             }
             
         }

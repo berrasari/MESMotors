@@ -1,5 +1,8 @@
 package mesMotors;
-
+/**
+ * Gelen müsteriler hizmet almak icin kuyruk yapisinda alinir.
+ * Ilk gelen ilk hizmet alir seklinde bir yapi kullanilmis olur.
+*/
 public class CustomerQueue {
 
 	public int maxSize;
@@ -8,7 +11,7 @@ public class CustomerQueue {
 	public int rear;
 	public int elementNumber;
 
-	// Constructor olu�turuluyor.
+	// Constructor olusturuluyor.
 	public CustomerQueue(int size) {
 		maxSize = size;
 		customerQueueArray = new Customer[maxSize];
@@ -45,7 +48,7 @@ public class CustomerQueue {
 
 	public void printQueue() {
 
-		System.out.println("\ncustomer is printing...");
+		System.out.println("\nCustomer is printing...");
 		for (int i = 0; i <= rear; i++) {
 			System.out.print( ((Customer)customerQueueArray[front]).toString()+ " -> ");
 			front++;

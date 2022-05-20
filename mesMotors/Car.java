@@ -10,6 +10,7 @@ public class Car {
    int year;
    int km;
    int price;
+public Car data;
 
 public Car( String brandName, String model, String color, int year, int km, int price) {
     myId = nextId++;
@@ -23,12 +24,14 @@ public Car( String brandName, String model, String color, int year, int km, int 
 @Override
 public String toString() {
     // TODO Auto-generated method stub
-    return  " // Id: "+ myId +" // Brand: "+ brandName +" // Model: "+  model +" // Color: "+  color +" // Year: "+  year +" // Km: "+  km +" // "+  price;
+    return  "// Id:"+ String.format("%" + 5 + "s", myId) +" // Brand:"+ String.format("%" + 11 + "s", brandName) +" // Model: "+  String.format("%" + 10 + "s", model) +"   // Color: "+  String.format("%" + 7 + "s", color) +"   // Year: "+  String.format("%" + 5 + "s", year) +"   // Km:"+  String.format("%" + 10 + "s", km) +"   // Price:"+  String.format("%" + 10 + "s", price)+" TL ";
 }
 
 public int getId(){
     return myId;
 }
-   
+public int getPrice(){
+    return price;
+}   
    
 }
