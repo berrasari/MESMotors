@@ -1,9 +1,6 @@
-package mesMotors;
+package mesmotors;
 
-/**
- * Node yapimiz data olarak Car sinifindan nesneleri tutar.
-*/
 public class Node {
     Car data;
-    public Node next;
+    public Node next;  
 }
