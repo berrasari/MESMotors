@@ -39,6 +39,7 @@ public class CarList {
         newNode.data = data;
         newNode.next = null;
         Node temp = head;
+        
         while (temp.next != null) {
             temp = temp.next;
         }
@@ -99,7 +100,6 @@ public class CarList {
      * fiyatlari karsilastirilmis ve sonuc olarak arabalar fiyati düsükten
      * yüksege dogru siralanmistir.
      */
-
     public void toHighPrice() {
         System.out.println("\nSORTING BY INCREASING PRICE ...");
         System.out.println(" ");

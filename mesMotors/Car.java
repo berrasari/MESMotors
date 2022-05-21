@@ -7,17 +7,19 @@ public class Car {
 
     String brandName;
     String model;
-    String color;
+    String colour;
     int year;
     int km;
     int price;
     public Car data;
+    
+   
 
-    public Car(String brandName, String model, String color, int year, int km, int price) {
+    public Car(String brandName, String model, String colour, int year, int km, int price) {
         myId = nextId++;
         this.brandName = brandName;
         this.model = model;
-        this.color = color;
+        this.colour = colour;
         this.year = year;
         this.km = km;
         this.price = price;
@@ -25,7 +27,13 @@ public class Car {
 
     @Override
     public String toString() {
-        return "// Id:" + String.format("%" + 5 + "s", myId) + " // Brand:" + String.format("%" + 11 + "s", brandName) + " // Model: " + String.format("%" + 10 + "s", model) + "   // Color: " + String.format("%" + 7 + "s", color) + "   // Year: " + String.format("%" + 5 + "s", year) + "   // Km:" + String.format("%" + 10 + "s", km) + "   // Price:" + String.format("%" + 10 + "s", price) + " TL ";
+        return "// Id:" + String.format("%" + 5 + "s", myId)
+                + " // Brand:" + String.format("%" + 11 + "s", brandName)
+                + " // Model: " + String.format("%" + 10 + "s", model)
+                + " // Colour: " + String.format("%" + 7 + "s", colour)
+                + " // Year: " + String.format("%" + 5 + "s", year)
+                + " // Km:" + String.format("%" + 10 + "s", km)
+                + " // Price:" + String.format("%" + 10 + "s", price) + " TL ";
     }
 
     public int getId() {
