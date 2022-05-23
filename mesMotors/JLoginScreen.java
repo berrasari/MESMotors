@@ -349,7 +349,7 @@ public class JLoginScreen extends javax.swing.JFrame {
         
 
         carList.createDefaultCar();
-        customerQueue.createDefaultCustomer();
+        
 
         
 

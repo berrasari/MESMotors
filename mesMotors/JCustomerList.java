@@ -1,7 +1,8 @@
 package mesmotors;
 
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import static mesmotors.CustomerQueue.addCustomer;
+
 import static mesmotors.JLoginScreen.customerQueue;
 
 
@@ -208,27 +209,30 @@ public class JCustomerList extends javax.swing.JFrame {
     private void btnDeleteCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCustomerActionPerformed
         DefaultTableModel model = (DefaultTableModel) jTableCustomer.getModel();
         customerQueue.removeCustomer();
-        model.removeRow(customerQueue.rear);
-        customerQueue.rear--;
         
         printCustomerTable();
     }//GEN-LAST:event_btnDeleteCustomerActionPerformed
 
-    public void printCustomerTable(){
+    public void printCustomerTable() {
         DefaultTableModel model = (DefaultTableModel) jTableCustomer.getModel();
         Object rowData[] = new Object[1];
         
-        int jRear = customerQueue.rear;
-        int jFront = customerQueue.front;
+        
+        Node temp = customerQueue.front;
+        Node next;
+        
         model.getDataVector().removeAllElements();
-        
-        for (int i = 0; i <= jRear; i++) {
-            rowData[0] = customerQueue.customerQueueArray[jFront];
-            jFront++;
+
+        while (temp != null) {
+            rowData[0] = ((Customer) temp.data).getName();
+            
+
+            temp = temp.next;
             model.addRow(rowData);
-        } 
-        
+        }
+
     }
+
     
     public void addCustomerList(){
         if(txtSearchStick.getText().equals("")){

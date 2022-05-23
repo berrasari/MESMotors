@@ -96,7 +96,7 @@ public class CarList {
 
                 if (((Car) current.data).getId() == id) {
 
-                    return current.data;
+                    return (Car) current.data;
                 }
 
                 current = current.next;
@@ -144,7 +144,7 @@ public class CarList {
 
         Node pivot_prev = start;
         Node curr = start;
-        Car pivot = end.data;
+        Car pivot = (Car) end.data;
 
         /**
          * Sonuncudan bir öncekine kadar ilerlenir
@@ -157,7 +157,7 @@ public class CarList {
                  *
                  */
                 pivot_prev = curr;
-                Car temp = curr.data;
+                Car temp = (Car) curr.data;
                 curr.data = start.data;
                 start.data = temp;
                 curr = curr.next;
@@ -165,7 +165,7 @@ public class CarList {
             start = start.next;
         }
 
-        Car temp = curr.data;
+        Car temp = (Car) curr.data;
         curr.data = pivot;
         end.data = temp;
 
@@ -195,7 +195,7 @@ public class CarList {
 
         Node pivot_prev = start;
         Node curr = start;
-        Car pivot = end.data;
+        Car pivot = (Car) end.data;
 
         /**
          * Sonuncudan bir öncekine kadar ilerlenir
@@ -208,7 +208,7 @@ public class CarList {
                  *
                  */
                 pivot_prev = curr;
-                Car temp = curr.data;
+                Car temp = (Car) curr.data;
                 curr.data = start.data;
                 start.data = temp;
                 curr = curr.next;
@@ -216,7 +216,7 @@ public class CarList {
             start = start.next;
         }
 
-        Car temp = curr.data;
+        Car temp = (Car) curr.data;
         curr.data = pivot;
         end.data = temp;
 

@@ -262,13 +262,13 @@ public class JInterfaceScreen extends javax.swing.JFrame {
         model.getDataVector().removeAllElements();
 
         while (temp != null) {
-            rowData[0] = temp.data.getId();
-            rowData[1] = temp.data.brandName;
-            rowData[2] = temp.data.model;
-            rowData[3] = temp.data.colour;
-            rowData[4] = temp.data.year;
-            rowData[5] = temp.data.km;
-            rowData[6] = temp.data.price;
+            rowData[0] = ((Car) temp.data).getId();
+            rowData[1] = ((Car) temp.data).brandName;
+            rowData[2] = ((Car) temp.data).model;
+            rowData[3] = ((Car) temp.data).colour;
+            rowData[4] = ((Car) temp.data).year;
+            rowData[5] = ((Car) temp.data).km;
+            rowData[6] = ((Car) temp.data).price;
 
             temp = temp.next;
             model.addRow(rowData);
@@ -333,13 +333,13 @@ public class JInterfaceScreen extends javax.swing.JFrame {
         model.getDataVector().removeAllElements();
 
         while (temp != null) {
-            rowData[0] = temp.data.getId();
-            rowData[1] = temp.data.brandName;
-            rowData[2] = temp.data.model;
-            rowData[3] = temp.data.colour;
-            rowData[4] = temp.data.year;
-            rowData[5] = temp.data.km;
-            rowData[6] = temp.data.price;
+            rowData[0] = ((Car) temp.data).getId();
+            rowData[1] = ((Car) temp.data).brandName;
+            rowData[2] = ((Car) temp.data).model;
+            rowData[3] = ((Car) temp.data).colour;
+            rowData[4] = ((Car) temp.data).year;
+            rowData[5] = ((Car) temp.data).km;
+            rowData[6] = ((Car) temp.data).price;
 
             temp = temp.next;
             model.addRow(rowData);
