@@ -1,7 +1,13 @@
+//bu main class ve login ekranı oluyor.
+
 package mesmotors;
 
 public class JLoginScreen extends javax.swing.JFrame {
-    JInterfaceScreen interfaceScreen = new JInterfaceScreen();
+
+    public static JInterfaceScreen interfaceScreen = new JInterfaceScreen();
+    static CarList carList = new CarList(new Car("Mercedes", "G Wagon", "White", 2019, 25000, 5500000));
+    public static CustomerQueue customerQueue = new CustomerQueue();
+     
     /**
      * Creates new form JLoginScreen
      */
@@ -247,16 +253,16 @@ public class JLoginScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
-       
+
     }//GEN-LAST:event_txtNameActionPerformed
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
         Employee employee = new Employee();
-        
-        if(employee.login(txtName.getText(), txtPassword.getText())){
+
+        if (employee.login(txtName.getText(), txtPassword.getText())) {
             interfaceScreen.show();
             dispose();
-        } else{
+        } else {
             lblMessage.setText("Kullanıcı adı veya şifre yanlış.");
         }
     }//GEN-LAST:event_btnEnterActionPerformed
@@ -266,19 +272,19 @@ public class JLoginScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void cboxShowPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxShowPasswordActionPerformed
-         if(cboxShowPassword.isSelected()){
-            txtPassword.setEchoChar((char)0);
-         } else{
-            txtPassword.setEchoChar('*'); 
-         }
+        if (cboxShowPassword.isSelected()) {
+            txtPassword.setEchoChar((char) 0);
+        } else {
+            txtPassword.setEchoChar('*');
+        }
     }//GEN-LAST:event_cboxShowPasswordActionPerformed
 
     private void txtNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNameMouseClicked
-         txtName.setText("");
+        txtName.setText("");
     }//GEN-LAST:event_txtNameMouseClicked
 
     private void txtNameMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNameMouseEntered
-       
+
     }//GEN-LAST:event_txtNameMouseEntered
 
     private void txtNameMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNameMouseExited
@@ -290,7 +296,7 @@ public class JLoginScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNameKeyPressed
 
     private void txtNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNameFocusGained
-      
+
     }//GEN-LAST:event_txtNameFocusGained
 
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
@@ -298,7 +304,7 @@ public class JLoginScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPasswordActionPerformed
 
     private void txtPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPasswordFocusGained
-       
+
     }//GEN-LAST:event_txtPasswordFocusGained
 
     private void txtPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPasswordMouseClicked
@@ -338,28 +344,20 @@ public class JLoginScreen extends javax.swing.JFrame {
                 new JLoginScreen().setVisible(true);
             }
         });
-        
-        
-        
-        CustomerQueue customerQueue = new CustomerQueue(100);
-        customerQueue.addCustomer(new Customer("Berra"));
-        customerQueue.addCustomer(new Customer("ismail"));
-        customerQueue.addCustomer(new Customer("can"));
 
         
         
 
-        //carList.printCarList();
-        //carList.deleteCar(3);
-        //carList.deleteCar(5);
+        carList.createDefaultCar();
+        customerQueue.createDefaultCustomer();
 
-        // carList.soldCars.printSoldCars();
-        // customerQueue.printQueue();
+        
+
+      
         //carList.toLowPrice();
         //carList.printCarList();
         //carList.toHighPrice();
         //carList.printCarList();
-    
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -3,19 +3,31 @@ package mesmotors;
 public class CarList {
 
     Node head = null;
-    SoldCars soldCars = null;
+    SaleCars saleCars ;
 
-    /**
-     * Arayüzde araba eklemek tek buton kullanilacagindan initialize fonksiyonu
-     * constructorin icine entegre edilmistir.
-     */
+    CarList() {  
+    }
+    
     CarList(Car data) {
-        soldCars = new SoldCars();
+        saleCars = new SaleCars();
         head = new Node();
         head.data = data;
         head.next = null;
-
     }
+    
+    public  void createDefaultCar(){
+        addCar(new Car("Citroën", "C5", "Blue", 2010, 169000, 239000));
+        addCar(new Car("Audi", "A5", "White", 2016, 104000, 1550000));
+        addCar(new Car("Chevrolet", "Captiva", "White", 2012, 109000, 375000));
+        addCar(new Car("Opel", "Insignia", "Black", 2011, 210000, 269000));
+        addCar(new Car("Toyota", "Auris", "Grey", 2013, 110000, 289000));
+        addCar(new Car("Opel", "Insignia", "White", 2012, 213000, 259500));
+        addCar(new Car("Kia", "Ceed", "Black", 2012, 173000, 339000));
+        addCar(new Car("Seat", "Ibiza", "White", 2014, 160000, 315000));
+        addCar(new Car("Kia", "Pro Ceed", "White", 2013, 180000, 299000));
+        addCar(new Car("Kia", "Picanto", "Black", 2013, 180000, 299000));
+    }
+
 
     /**
      * Bagli listedeki arabalar yazdirilir
@@ -60,8 +72,7 @@ public class CarList {
                     tmp = current.next;
                     current.next = tmp.next;
                     durum = true;
-                    soldCars.push(car);
-
+                    saleCars.push(car);
                     break;
                 }
                 current = current.next;

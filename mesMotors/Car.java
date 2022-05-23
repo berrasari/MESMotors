@@ -25,6 +25,10 @@ public class Car {
         this.price = price;
     }
 
+    Car() {
+       
+    }
+
     @Override
     public String toString() {
         return "// Id:" + String.format("%" + 5 + "s", myId)

@@ -3,8 +3,7 @@ package mesmotors;
 public class Customer {
 
     private String name;
-    Car customerCar;
-
+  
     public Customer(String name) {
         this.name = name;
     }
@@ -15,6 +14,6 @@ public class Customer {
 
     @Override
     public String toString() {
-        return " // Name: " + getName();
+        return "" + getName();
     }
 }
