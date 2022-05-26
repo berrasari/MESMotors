@@ -4,7 +4,7 @@ package mesmotors;
 
 public class JLoginScreen extends javax.swing.JFrame {
 
-    public static JInterfaceScreen interfaceScreen = new JInterfaceScreen();
+    public static JInterfaceScreen jInterfaceScreen = new JInterfaceScreen();
     static CarList carList = new CarList(new Car("Mercedes", "G Wagon", "White", 2019, 25000, 5500000));
     public static CustomerQueue customerQueue = new CustomerQueue();
      
@@ -260,7 +260,7 @@ public class JLoginScreen extends javax.swing.JFrame {
         Employee employee = new Employee();
 
         if (employee.login(txtName.getText(), txtPassword.getText())) {
-            interfaceScreen.show();
+            jInterfaceScreen.show();
             dispose();
         } else {
             lblMessage.setText("Kullanıcı adı veya şifre yanlış.");
@@ -345,19 +345,7 @@ public class JLoginScreen extends javax.swing.JFrame {
             }
         });
 
-        
-        
-
         carList.createDefaultCar();
-        
-
-        
-
-      
-        //carList.toLowPrice();
-        //carList.printCarList();
-        //carList.toHighPrice();
-        //carList.printCarList();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

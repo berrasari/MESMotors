@@ -111,9 +111,8 @@ public class CarList {
      * fiyatlari karsilastirilmis ve sonuc olarak arabalar fiyati düsükten
      * yüksege dogru siralanmistir.
      */
-    public void toHighPrice() {
-        System.out.println("\nSORTING BY INCREASING PRICE ...");
-        System.out.println(" ");
+    public void sortIncreasePrice() {
+        
         Node n = head;
         while (n.next != null) {
             n = n.next;
@@ -124,9 +123,8 @@ public class CarList {
 
     }
 
-    public void toLowPrice() {
-        System.out.println("\nSORTING BY DECRISING PRICE ...");
-        System.out.println(" ");
+    public void sortDecreasePrice() {
+        
         Node n = head;
         while (n.next != null) {
             n = n.next;

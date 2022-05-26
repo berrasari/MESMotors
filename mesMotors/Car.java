@@ -29,17 +29,6 @@ public class Car {
        
     }
 
-    @Override
-    public String toString() {
-        return "// Id:" + String.format("%" + 5 + "s", myId)
-                + " // Brand:" + String.format("%" + 11 + "s", brandName)
-                + " // Model: " + String.format("%" + 10 + "s", model)
-                + " // Colour: " + String.format("%" + 7 + "s", colour)
-                + " // Year: " + String.format("%" + 5 + "s", year)
-                + " // Km:" + String.format("%" + 10 + "s", km)
-                + " // Price:" + String.format("%" + 10 + "s", price) + " TL ";
-    }
-
     public int getId() {
         return myId;
     }

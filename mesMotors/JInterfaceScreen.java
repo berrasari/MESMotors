@@ -8,6 +8,8 @@ import static mesmotors.JLoginScreen.carList;
 public class JInterfaceScreen extends javax.swing.JFrame {
 
     public static JCustomerList jCustomerList = new JCustomerList();
+    public static JLoginScreen jLoginScreen = new JLoginScreen();
+    public static JAddCar jAddCar = new JAddCar(); 
     
     public JInterfaceScreen() {
         initComponents();
@@ -29,44 +31,64 @@ public class JInterfaceScreen extends javax.swing.JFrame {
         btnSellCar = new javax.swing.JButton();
         btnCustomerList = new javax.swing.JButton();
         btnSaleHistory = new javax.swing.JButton();
+        btnExitLogin = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         txtSearchStick = new javax.swing.JTextField();
+        lblErrorMessage = new javax.swing.JLabel();
         btnPrintCars = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btnFindCar = new javax.swing.JButton();
-        lblErrorMessage = new javax.swing.JLabel();
+        btnSortIncrease = new javax.swing.JButton();
+        btnSortDecrease = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Yönetici Ekranı");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
+        btnAddCar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnAddCar.setText("Araba ekle");
+        btnAddCar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnAddCar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddCarActionPerformed(evt);
             }
         });
 
+        btnSellCar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnSellCar.setText("Araba Satışı");
+        btnSellCar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnSellCar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSellCarActionPerformed(evt);
             }
         });
 
+        btnCustomerList.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnCustomerList.setText("Müşteri Listesi");
+        btnCustomerList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnCustomerList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCustomerListActionPerformed(evt);
             }
         });
 
+        btnSaleHistory.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnSaleHistory.setText("Satış Geçmişi");
+        btnSaleHistory.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnSaleHistory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaleHistoryActionPerformed(evt);
+            }
+        });
+
+        btnExitLogin.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        btnExitLogin.setText("Çıkış");
+        btnExitLogin.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnExitLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitLoginActionPerformed(evt);
             }
         });
 
@@ -77,28 +99,34 @@ public class JInterfaceScreen extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCustomerList, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                    .addComponent(btnCustomerList, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
                     .addComponent(btnAddCar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnSaleHistory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSellCar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSellCar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnExitLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(80, 80, 80)
+                .addContainerGap()
                 .addComponent(btnAddCar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnSellCar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnCustomerList, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(btnSaleHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnCustomerList, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnExitLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jPanel3.setBackground(new java.awt.Color(204, 0, 51));
 
+        txtSearchStick.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtSearchStick.setText("Id Griniz");
         txtSearchStick.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -111,7 +139,14 @@ public class JInterfaceScreen extends javax.swing.JFrame {
             }
         });
 
+        lblErrorMessage.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblErrorMessage.setText(" ");
+
+        btnPrintCars.setBackground(new java.awt.Color(0, 0, 51));
+        btnPrintCars.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnPrintCars.setForeground(new java.awt.Color(204, 0, 51));
         btnPrintCars.setText("Araç Listesini Yazdır");
+        btnPrintCars.setBorder(null);
         btnPrintCars.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrintCarsActionPerformed(evt);
@@ -145,32 +180,61 @@ public class JInterfaceScreen extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(6).setResizable(false);
         }
 
+        btnFindCar.setBackground(new java.awt.Color(0, 0, 51));
+        btnFindCar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnFindCar.setForeground(new java.awt.Color(204, 0, 51));
         btnFindCar.setText("Ara");
+        btnFindCar.setBorder(null);
         btnFindCar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFindCarActionPerformed(evt);
             }
         });
 
-        lblErrorMessage.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        lblErrorMessage.setText(" ");
+        btnSortIncrease.setBackground(new java.awt.Color(0, 0, 51));
+        btnSortIncrease.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnSortIncrease.setForeground(new java.awt.Color(204, 0, 51));
+        btnSortIncrease.setText("Artan Fiyata Göre ");
+        btnSortIncrease.setBorder(null);
+        btnSortIncrease.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSortIncreaseActionPerformed(evt);
+            }
+        });
+
+        btnSortDecrease.setBackground(new java.awt.Color(0, 0, 51));
+        btnSortDecrease.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnSortDecrease.setForeground(new java.awt.Color(204, 0, 51));
+        btnSortDecrease.setText("Azalan Fiyata Göre");
+        btnSortDecrease.setBorder(null);
+        btnSortDecrease.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSortDecreaseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblErrorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(txtSearchStick)
-                            .addGap(18, 18, 18)
-                            .addComponent(btnFindCar))
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnPrintCars, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(427, 427, 427)
+                        .addComponent(btnFindCar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnPrintCars, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSortIncrease, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSortDecrease, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblErrorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSearchStick, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(4, 10, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,13 +242,17 @@ public class JInterfaceScreen extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSearchStick, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnFindCar))
-                .addGap(18, 18, 18)
-                .addComponent(lblErrorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnPrintCars)
+                    .addComponent(btnFindCar, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addComponent(btnSortDecrease, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSortIncrease, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblErrorMessage)
+                    .addComponent(btnPrintCars, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -192,10 +260,11 @@ public class JInterfaceScreen extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,7 +276,7 @@ public class JInterfaceScreen extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,7 +303,8 @@ public class JInterfaceScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSearchStickMouseClicked
 
     private void btnAddCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCarActionPerformed
-        // TODO add your handling code here:
+        jAddCar.show();
+        dispose();
     }//GEN-LAST:event_btnAddCarActionPerformed
 
     private void btnSellCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSellCarActionPerformed
@@ -250,6 +320,19 @@ public class JInterfaceScreen extends javax.swing.JFrame {
         jCustomerList.show();
         dispose();
     }//GEN-LAST:event_btnCustomerListActionPerformed
+
+    private void btnSortDecreaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortDecreaseActionPerformed
+        sortDecrease();
+    }//GEN-LAST:event_btnSortDecreaseActionPerformed
+
+    private void btnExitLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitLoginActionPerformed
+        jLoginScreen.show();
+        dispose();
+    }//GEN-LAST:event_btnExitLoginActionPerformed
+
+    private void btnSortIncreaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortIncreaseActionPerformed
+        sortIncrease();
+    }//GEN-LAST:event_btnSortIncreaseActionPerformed
 
 //Burada jtable'a ekleme işlemini yapıyoruz.
     public void printCars() {
@@ -344,9 +427,16 @@ public class JInterfaceScreen extends javax.swing.JFrame {
             temp = temp.next;
             model.addRow(rowData);
         }
-
     }
-
+    
+    public void sortDecrease(){
+        carList.sortDecreasePrice();
+        printCars();
+    }
+    public void sortIncrease(){
+        carList.sortIncreasePrice();
+        printCars();
+    }
    
 
     public static void main(String args[]) {
@@ -385,10 +475,13 @@ public class JInterfaceScreen extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddCar;
     private javax.swing.JButton btnCustomerList;
+    private javax.swing.JButton btnExitLogin;
     private javax.swing.JButton btnFindCar;
     private javax.swing.JButton btnPrintCars;
     private javax.swing.JButton btnSaleHistory;
     private javax.swing.JButton btnSellCar;
+    private javax.swing.JButton btnSortDecrease;
+    private javax.swing.JButton btnSortIncrease;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
